@@ -11,7 +11,7 @@ class DetailsController extends Controller
     public function show($id){
         return view('Lenen.itemDetails', [
             'item' => \App\Models\items::find($id),
-
+            'reviews' => \App\Models\Review::all(),
         ]);
     }
 

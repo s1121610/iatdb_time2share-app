@@ -51,5 +51,17 @@
             </section>
             <button class="u-button u-button--primary details__reviews__submit" type="submit">Versturen</button>
         </form>
+        <section class="details__posts">
+            <h2 class="details__reviews__title">Reviews</h2>
+            <ul>
+                @foreach($reviews as $review)
+                    @if($review->item == $item->id)
+                        @include("Lenen.components.itemsCard--review")
+                    @endif
+                @endforeach
+            </ul>
+    
+        </section>
     </section>
+
 </article>

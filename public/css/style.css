@@ -47,6 +47,14 @@ p{
     padding-top: 3rem;
 }
 
+.landing-header__logo__tekst--subpage{
+    top: 0;
+    left: 0;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    width: auto;
+}
+
 .landing-header__tekst{
     width: 50rem;
 }
@@ -91,9 +99,16 @@ p{
     margin-left: 71%;
 }
 
-/*#############################################################################*/
-
-
+.nav__subpage{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 1.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    align-items: center;
+}
 
 /*###################################### NAV #################################*/
 
@@ -107,6 +122,8 @@ p{
 
 .nav__list{
     list-style: none;
+    top: 0;
+    align-self:flex-end;
 }
 
 .nav__list__item{
@@ -120,10 +137,22 @@ p{
     text-decoration: none;
 }
 
+.nav__list__button{
+    display: inline;
+    padding-bottom: 1rem;
+}
+
+.nav-subpage{
+    background-color: var(--secondary-color);
+    min-height: 6rem;
+    color: #eee;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
 
 /*#############################################################################*/
-
-
 .GridCard > a{
     text-decoration: none;
 }
@@ -399,12 +428,28 @@ p{
     content: "";
 }
 
+.searchWrapper{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchWrapper__bar{
+    margin: 5rem 0;
+    height: 3rem;
+    padding: 1rem;
+    width: 50%;
+    font-size: 2.5rem;
+    font-family: 'Raleway', sans-serif;
+}
+
 /* ########################## DETAILPAGE #################################### */
 
 .details{
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 5rem auto;
     background-color: var(--secondary-color);
     max-width: 60%;
     border-radius: 2rem;
@@ -465,6 +510,40 @@ p{
     margin-left: 80%;   
 }
 
+/* ########################## REVIEWSECTION #################################### */
+
+.reviewcard{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.reviewCard__title{
+    font-size: 2.3rem;
+}
+
+.reviewCard__figure{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+.reviewCard__title__score{
+    font-weight: bold ;
+}
+
+.reviewCard__section{
+    max-width: 60%;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
 /* ########################## UTILITY CLASSES ########################## */
 
 .u-list-style-none{
@@ -472,7 +551,8 @@ p{
 }
 
 .u-grid-12{
-    width: 100%;
+    width: 90%;
+    margin: 5rem auto;
     display: grid;
     grid-template-columns: repeat(12,minmax(0,1fr));
 }
@@ -499,6 +579,23 @@ p{
 
 .u-white{
     color: var(--background-color);
+}
+
+.u-noLinkStyle{
+    color: inherit;
+    text-decoration: none;
+}
+
+.u-margin{
+    margin: 0 1rem 0 0;
+}
+
+.u-margin--nav{
+    margin: 0 1rem 0 0;
+}
+
+.u-float{
+    float: right;
 }
 /* ################## KEYFRAMES ###########################*/
 .a-popup{
@@ -542,9 +639,6 @@ p{
     transform: perspective(.2rem) translateZ(0);
 }
 
-.u-margin{
-    margin: 0 1rem 0 0;
-}
 
 
 @keyframes popup{

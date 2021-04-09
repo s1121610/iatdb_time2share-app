@@ -9,9 +9,9 @@
     <link rel="stylesheet" type="text/css" href="{{ url('./css/style.css') }}">
 </head>
 <body>
-    @section('title')
+    <!-- @section('title')
         Creeër Sushi
-    @endsection
+    @endsection -->
 
     <article class="create-form">
         <form class="create-form__form" action="/aanbod" method="POST">

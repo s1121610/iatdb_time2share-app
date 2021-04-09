@@ -8,8 +8,8 @@
         <h1 class="landing-header__tekst__title">Altijd je spullen weer terug</h1>
         <p class="landing-header__tekst__p">Vind jij het ook zo irritant als je uitgeleende spullen niet meer terug krijg? Time2share biedt de oplossing!</p>
         <section>
-            <button class="u-button u-button--primary u-margin" onclick="window.location.href='/aanbod/create'">Uitlenen</button>
-            <button class="u-button u-button--secondary u-margin" onclick="window.location.href='/aanbod'">Bekijk het aanbod</button>
+            <button class="u-button u-button--primary u-margin--nav" onclick="window.location.href='/aanbod/create'">Uitlenen</button>
+            <button class="u-button u-button--secondary u-margin--nav" onclick="window.location.href='/aanbod'">Bekijk het aanbod</button>
         </section>
     </article>
     <figure class="landing-header__figure">

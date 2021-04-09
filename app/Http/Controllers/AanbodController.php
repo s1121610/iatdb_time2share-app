@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AanbodController extends Controller
 {   
@@ -13,6 +14,7 @@ class AanbodController extends Controller
     public function show(){
         return view('Lenen.aanbod', [
             'item' => \App\Models\items::all(),
+            'reviews' => \App\Models\Review::all(),
         ]);
     }
 
@@ -32,7 +34,7 @@ class AanbodController extends Controller
         $items->image3 = $request->input('image3');
         $items->description = $request->input('description');
         $items->image = $request->input('image');
-        $items->owner = $request->input('owner');
+        $items->owner = Auth::user()->username;
         $items->deadline = $request->input('deadline');
 
         try{
