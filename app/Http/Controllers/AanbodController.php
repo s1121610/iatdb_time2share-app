@@ -8,7 +8,17 @@ use Illuminate\Support\Facades\Auth;
 class AanbodController extends Controller
 {   
     public function home(){
-        return view('Lenen.landingpage');
+        return view('Lenen.landingpage', [
+            'item' => \App\Models\items::all(),
+            'categories' => \App\Models\categories::all(),
+        ]);
+    }
+
+    public function showCat($id){
+        return view('Lenen.aanbod', [
+            'item' => \App\Models\items::find($category),
+            'reviews' => \App\Models\Review::all(),
+        ]);
     }
 
     public function show(){

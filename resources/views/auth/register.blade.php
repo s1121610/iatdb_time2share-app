@@ -1,8 +1,17 @@
 <x-guest-layout>
     <x-auth-card>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+    html{
+        font-size: 100%;
+    }
+    </style>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <!-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> -->
+                <figure class="landing-header__logo landing-header__logo--subpage">
+                    <p class="landing-header__logo__tekst--subpage landing-header__logo__tekst">Time<span class="u-blue">2</span>Share</p>
+                </figure>
             </a>
         </x-slot>
 
@@ -17,6 +26,13 @@
                 <x-label for="name" :value="__('Name')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+            </div>
+
+            <!-- Username -->
+            <div class="mt-4">
+                <x-label for="username" :value="__('Username')" />
+
+                <x-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
             </div>
 
             <!-- Email Address -->
@@ -46,13 +62,13 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                <a class="u-margin underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-button class="ml-4">
+                <button class="u-margin u-button u-button--primary">
                     {{ __('Register') }}
-                </x-button>
+                </button>
             </div>
         </form>
     </x-auth-card>

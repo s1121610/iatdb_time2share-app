@@ -16,13 +16,13 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('/sushi/create', [App\Http\Controllers\SushiController::class, 'create']);
 });
 
-
 Route::middleware(['auth'])->group(function(){
     Route::get('/sushi', [\App\Http\Controllers\SushiController::class, 'index']);
     Route::get('/aanbod/create', [App\Http\Controllers\AanbodController::class, 'create']);
     Route::post('/aanbod/{id}/create', [\App\Http\Controllers\DetailsController::class, 'post']);
 });
 Route::get('/aanbod/{id}', [\App\Http\Controllers\DetailsController::class, 'show']);
+Route::get('/aanbod/{category}', [\App\Http\Controllers\AanbodController::class, 'showCat']);
 
 Route::get('/', [\App\Http\Controllers\AanbodController::class, 'home']);
 Route::get('/aanbod', [App\Http\Controllers\AanbodController::class, 'show']);

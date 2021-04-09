@@ -1,8 +1,8 @@
-// let checkboxMaki = document.getElementById("Maki");
-// let checkboxTemaki = document.getElementById("Temaki");
-// let checkboxUramaki = document.getElementById("Uramaki");
-// let checkboxSashimi = document.getElementById("Sashimi");
-// let checkboxNigiri = document.getElementById("Nigiri");
+// const checkboxMaki = document.getElementById("Maki");
+// const checkboxTemaki = document.getElementById("Temaki");
+// const checkboxUramaki = document.getElementById("Uramaki");
+// const checkboxSashimi = document.getElementById("Sashimi");
+// const checkboxNigiri = document.getElementById("Nigiri");
 
 // let list_of_sushi = document.getElementsByTagName("li");
 
