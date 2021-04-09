@@ -33,6 +33,7 @@ class AanbodController extends Controller
         $items->description = $request->input('description');
         $items->image = $request->input('image');
         $items->owner = $request->input('owner');
+        $items->deadline = $request->input('deadline');
 
         try{
             $items->save();

@@ -399,6 +399,71 @@ p{
     content: "";
 }
 
+/* ########################## DETAILPAGE #################################### */
+
+.details{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: var(--secondary-color);
+    max-width: 60%;
+    border-radius: 2rem;
+    padding: 2rem 5rem 5rem 5rem;
+}
+
+.details__back_to_home{
+    font-size: 1.4rem;
+    color: var(--background-color);
+}
+
+.details__header__title{
+    font-weight: bold;
+    font-size: 2.8rem;
+    color: var(--background-color);
+}
+
+.details__header__subtitle{
+    font-size: 2rem;
+    color: var(--background-color);
+}
+
+.details__image{
+    width: 40vw;
+    border-radius: 2rem;
+}
+
+.details__btnSection{
+    display: relative;
+}
+
+.details__btnSection__button{
+    margin-left: 80%;
+}
+
+.details__text, .details__header{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--background-color);
+}
+
+.details__text__title{
+    font-size: 2rem;
+}
+
+.details__text__tekst{
+    font-size: 1.6rem;
+}
+
+.details__reviews__title{
+    font-size: 2.8rem;
+    color: var(--background-color)
+    
+}
+
+.details__reviews__submit{
+    margin-left: 80%;   
+}
 
 /* ########################## UTILITY CLASSES ########################## */
 
@@ -430,6 +495,10 @@ p{
 .u-blue{
     color: var(--primary-color);
     font-weight: bold;
+}
+
+.u-white{
+    color: var(--background-color);
 }
 /* ################## KEYFRAMES ###########################*/
 .a-popup{

@@ -20,8 +20,9 @@ Route::middleware(['auth', 'admin'])->group(function(){
 Route::middleware(['auth'])->group(function(){
     Route::get('/sushi', [\App\Http\Controllers\SushiController::class, 'index']);
     Route::get('/aanbod/create', [App\Http\Controllers\AanbodController::class, 'create']);
+    Route::post('/aanbod/{id}/create', [\App\Http\Controllers\DetailsController::class, 'post']);
 });
-Route::get('/aanbod/{id}', [\App\Http\Controllers\AanbodController::class, '']);
+Route::get('/aanbod/{id}', [\App\Http\Controllers\DetailsController::class, 'show']);
 
 Route::get('/', [\App\Http\Controllers\AanbodController::class, 'home']);
 Route::get('/aanbod', [App\Http\Controllers\AanbodController::class, 'show']);

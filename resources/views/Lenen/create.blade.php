@@ -68,6 +68,10 @@
                 </select>
             </section>
             <section class="create-form__section">
+                <label for="deadline">Deadline</label>
+                <input class="create-form__input" type="date" name="deadline" id="deadline" value="2021-04-10" min="2021-04-10" max="2022-04-10" required>
+            </section>
+            <section class="create-form__section">
                 <button class="sushiCard__button" type="submit">Uitlenen</button>
             </section>
         </form>
