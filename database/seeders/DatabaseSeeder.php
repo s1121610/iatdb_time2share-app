@@ -14,19 +14,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            ImageTableSeeder::class,
-            KindOfSushiTableSeeder::class,
-            SushiMakiTableSeeder::class,
-            SushiNigiriTableSeeder::class,
-            SushiSashimiTableSeeder::class,
-            SushiTemakiTableSeeder::class,
-            SushiUramakiTableSeeder::class,
-            KindOfAlcoholTableSeeder::class,
-            BeerTableSeeder::class,
-            WineTableSeeder::class,
-            SakeTableSeeder::class,
-            RolesTableSeeder::class,
-            UsersTableSeeder::class
+            UsersTableSeeder::class,
+            CategoriesTableSeeder::class,
+            ItemsTableSeeder::class
         ]);
     }
 }

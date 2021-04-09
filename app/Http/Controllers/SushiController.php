@@ -13,6 +13,8 @@ class SushiController extends Controller
         ]);
     }
 
+    
+
     public function show($id){
         return view('sushi.show', [
             'sushi' => \App\Models\Sushi::find($id),

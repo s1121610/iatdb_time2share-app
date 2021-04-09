@@ -14,14 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('/sushi/create', [App\Http\Controllers\SushiController::class, 'create']);
-    Route::post('/sushi', [App\Http\Controllers\SushiController::class, 'store']);
 });
+
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/sushi', [\App\Http\Controllers\SushiController::class, 'index']);
-    Route::get('/sushi/{id}', [\App\Http\Controllers\SushiController::class, 'show']);
-    Route::get('/', [\App\Http\Controllers\SushiController::class, 'index']);
+    Route::get('/aanbod/create', [App\Http\Controllers\AanbodController::class, 'create']);
 });
+Route::get('/aanbod/{id}', [\App\Http\Controllers\AanbodController::class, '']);
+
+Route::get('/', [\App\Http\Controllers\AanbodController::class, 'home']);
+Route::get('/aanbod', [App\Http\Controllers\AanbodController::class, 'show']);
+Route::post('/aanbod', [App\Http\Controllers\AanbodController::class, 'store']);
+
 
 Route::middleware(['auth', 'age'])->group(function(){
     Route::get('/drinks', [App\Http\Controllers\DrinksController::class, 'index']);
