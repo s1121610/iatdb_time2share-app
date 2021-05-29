@@ -5,7 +5,7 @@
                 <h2 class="sushiGridCard__heading">{{$item->name}}</h2>
             </header>
             <figure class="GridCard__figure">
-                <img class="GridCard__image" src="{{$item->image}}" alt="{{$item->name}}">
+                <img class="GridCard__image" src="../../{{$item->image}}" alt="{{$item->name}}">
             </figure>
             <section class="GridCard__textSection u-flex-v-center">
                 <p class="GridCard__text">{{$item->description}}</p>

@@ -16,7 +16,7 @@ class ItemsTableSeeder extends Seeder
     {
         DB::table('items')->insert([
             'name' => "Toyota Yaris (groen) uit 2001. Handgeschakeld",
-            'category' => "autos",
+            'category' => "Autos",
             'description' => "Een Toyota Yaris uit 2001. Verzekerd. 5-deurs en handgeschakeld. Rijdt perfect!",
             'location' => "Den Haag",
             'image' => "./img/autos/yaris.jpg",
@@ -35,7 +35,7 @@ class ItemsTableSeeder extends Seeder
         ]);
         DB::table('items')->insert([
             'name' => "Toyota Yaris (groen) uit 2001. Handgeschakeld",
-            'category' => "autos",
+            'category' => "Autos",
             'description' => "Een Toyota Yaris uit 2001. Verzekerd. 5-deurs en handgeschakeld. Rijdt perfect!",
             'location' => "Den Haag",
             'image' => "./img/autos/yaris.jpg",
@@ -44,7 +44,7 @@ class ItemsTableSeeder extends Seeder
         ]);
         DB::table('items')->insert([
             'name' => "Toyota Yaris (groen) uit 2001. Handgeschakeld",
-            'category' => "autos",
+            'category' => "Autos",
             'description' => "Een Toyota Yaris uit 2001. Verzekerd. 5-deurs en handgeschakeld. Rijdt perfect!",
             'location' => "Den Haag",
             'image' => "./img/autos/yaris.jpg",
@@ -53,7 +53,7 @@ class ItemsTableSeeder extends Seeder
         ]);
         DB::table('items')->insert([
             'name' => "Toyota Yaris (groen) uit 2001. Handgeschakeld",
-            'category' => "autos",
+            'category' => "Autos",
             'description' => "Een Toyota Yaris uit 2001. Verzekerd. 5-deurs en handgeschakeld. Rijdt perfect!",
             'location' => "Den Haag",
             'image' => "./img/autos/yaris.jpg",
@@ -62,7 +62,7 @@ class ItemsTableSeeder extends Seeder
         ]);
         DB::table('items')->insert([
             'name' => "Toyota Yaris (groen) uit 2001. Handgeschakeld",
-            'category' => "autos",
+            'category' => "Autos",
             'description' => "Een Toyota Yaris uit 2001. Verzekerd. 5-deurs en handgeschakeld. Rijdt perfect!",
             'location' => "Den Haag",
             'image' => "./img/autos/yaris.jpg",

@@ -21,8 +21,9 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/aanbod/create', [App\Http\Controllers\AanbodController::class, 'create']);
     Route::post('/aanbod/{id}/create', [\App\Http\Controllers\DetailsController::class, 'post']);
 });
+ 
 Route::get('/aanbod/{id}', [\App\Http\Controllers\DetailsController::class, 'show']);
-Route::get('/aanbod/{category}', [\App\Http\Controllers\AanbodController::class, 'showCat']);
+Route::get('/aanbod/filter/{category}', [\App\Http\Controllers\AanbodController::class, 'showCat']);
 
 Route::get('/', [\App\Http\Controllers\AanbodController::class, 'home']);
 Route::get('/aanbod', [App\Http\Controllers\AanbodController::class, 'show']);

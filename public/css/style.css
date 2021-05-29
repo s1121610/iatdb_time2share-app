@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 
+
 :root{
-    --background-color : #E7ECEF;
+    --background-color : #cecece;
     --primary-color: #274c77;
     --secondary-color: #6096ba;
     --supporting-color: #a3cef1;
@@ -28,14 +29,13 @@ p{
 /*########################## HEADER ############################################*/
 
 .landing-header{
-    height: 50%;
-    width: 100vw;
-    top: 0;
-    left: 0;
+    height: 60%;
+    width: 100%;
+    margin: 0;
+    padding-left: 10%;
     color: #eee;
     background-color: #6096BA;
     background-color: none;
-    padding-left: 8rem;
     position: relative;
 }
 
@@ -47,6 +47,8 @@ p{
     padding-top: 3rem;
 }
 
+
+
 .landing-header__logo__tekst--subpage{
     top: 0;
     left: 0;
@@ -56,48 +58,66 @@ p{
 }
 
 .landing-header__tekst{
-    width: 50rem;
+    width: 100%;
 }
 
 .landing-header__tekst__title{
-    font-size: 4.4rem;
+    font-size: 2.8rem;
     letter-spacing: .1rem;
     padding-top: 4rem;
+    max-width: 100vw;
+    margin: 0;
 }
 
-.landing-header__tekst__title{
-    margin-bottom: 3rem;
+@media(min-width: 900px){
+    .landing-header__tekst__title{
+        font-size: 4.4rem;
+    }
 }
 
 .landing-header__tekst__p{
-    width: 40rem;
+    width: 80%;
     line-height: 2.5rem;
     margin-bottom: 2rem;
 }
 
 .landing-header__image{
-    max-width: 40rem;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: none;
 }
 
-.landing-header__image--kleren{
-    width: 27rem;
-    margin-top: 6%;
-    margin-left: 35%;
+@media(min-width: 1200px){
+    .landing-header__tekst__p{
+        width: 50%;
+    }
+
+    .landing-header__image{
+        display: block;
+        max-width: 40rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .landing-header__image--kleren{
+        width: 27rem;
+        margin-top: 6%;
+        margin-left: 40%;
+    }
+
+    .landing-header__image--auto{
+        width: 40rem;
+        margin-left: 55%;
+    }
+
+    .landing-header__image--camera{
+        width: 40rem;
+        margin-top: 14%;
+        margin-left: 70%;
+    }
 }
 
-.landing-header__image--auto{
-    width: 40rem;
-    margin-left: 55%;
-}
-
-.landing-header__image--camera{
-    width: 40rem;
-    margin-top: 14%;
-    margin-left: 71%;
-}
 
 .nav__subpage{
     display: flex;
@@ -113,11 +133,14 @@ p{
 /*###################################### NAV #################################*/
 
 .nav{
-    top: 0;
+    bottom: 0;
     right: 0;
-    margin-top: 2rem;
-    margin-right: 2rem;
-    position: absolute;
+    padding-top: 2rem;
+    padding-right: 0rem;
+    display: block;
+    position: fixed;
+    background: var(--primary-color);
+    font-size: 1.2rem;
 }
 
 .nav__list{
@@ -328,15 +351,16 @@ p{
 
 .create-form{
     width: 55%;
-    margin: 0 auto;
+    margin: 10% auto;
     box-shadow: 0 .5rem 2rem black;
-    height: 90vh;
-    width: 40%;
+    height: 90%;
+    width: 60%;
     padding: 2rem 3rem;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 2rem;
+    background: #eee;
 }
 
 .create-form__form{
@@ -351,6 +375,7 @@ p{
 
 .create-form__input{
     display: block; /*Op een nieuwe lijn*/
+    font-family: sans-serif;
     width: 70%;
     font-size: 1.6rem;
     margin-top: 1rem;
@@ -366,12 +391,13 @@ p{
 }
 
 .filter-section{
-    margin: 12rem 10rem;
+    margin: 12rem 10%;
     display: flex;
 }
 
 .filter-section__title{
     font-size: 3.5rem;
+    width: 30rem;
     color: var(--primary-color)
 }
 
@@ -411,13 +437,33 @@ p{
 }
 
 .filter-section-wrapper{
-    display: inline-block;
-    margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
 }
+
+@media(min-width: 1200px){
+    .filter-section-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        font-size: 1.6rem;
+        margin-left: 1rem;
+        align-items: center;
+        gap: 1rem;
+    }   
+}
+
 
 .filter-section-wrapper li{
     list-style: none;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
+    margin-right: 2.5rem
+}
+
+.filter-section-wrapper li > a{
+    color: var(--primary-color);
+    font-weight: bold;
+    letter-spacing: .05rem;
 }
 
 .filter_section__input[type="checkbox"] + .filter_section__label::after {
@@ -656,3 +702,10 @@ p{
 }
 
 /* ########## LOGIN ######################*/
+
+
+/* @media(min-width: 900px){
+    .landing-header{
+        padding-left: 10%;
+    }
+} */

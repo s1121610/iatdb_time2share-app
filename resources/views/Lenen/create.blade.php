@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sushi</title>
+    <title>Time2Share</title>
     <script src="/js/main.js" defer></script>
     <link rel="stylesheet" type="text/css" href="{{ url('./css/style.css') }}">
 </head>
@@ -14,7 +14,7 @@
     @endsection -->
 
     <article class="create-form">
-        <form class="create-form__form" action="/aanbod" method="POST">
+        <form class="create-form__form" action="/aanbod" method="POST" enctype="multipart/form-data">
             @csrf
             <section class="create-form__section">
                 <label for="name">Titel</label>
@@ -38,27 +38,16 @@
             </section>
             <section class="create-form__section">
                 <label for="image">Afbeelding</label>
-                <select class="create-form__input" name="image" id="image" required>
-                        <option value="./img/toyotaYaris/yaris.jpg">yaris.jpg</option>
-                        <option value="./img/header/Partybenodigdheden/parasol.jpg">parasol.jpg</option>
-                </select>
+                <input type="file" name="image" id="image" />
             </section>
-            <section class="create-form__section">
+            <!-- <section class="create-form__section">
                 <label for="image2">Afbeelding 2</label>
-                <select class="create-form__input" name="image2" id="image2">
-                        <option value="none">Geen</option>
-                        <option value="./img/toyotaYaris/yaris.jpg">yaris.jpg</option>
-                        <option value="./img/header/Partybenodigdheden/parasol.jpg">parasol.jpg</option>
-                </select>
+                <input type="file" name="image2" id="image2" />
             </section>
             <section class="create-form__section">
                 <label for="image3">Afbeelding 3</label>
-                <select class="create-form__input" name="image3" id="image3">
-                        <option value="none">Geen</option>
-                        <option value="./img/autos/yaris.jpg">yaris.jpg</option>
-                        <option value="./img/header/Partybenodigdheden/parasol.jpg">parasol.jpg</option>
-                </select>
-            </section>
+                <input type="file" name="image3" id="image3" />
+            </section> -->
             <section class="create-form__section">
                 <label for="owner">Owner</label>
                 <select class="create-form__input" name="owner" id="owner" required>

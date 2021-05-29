@@ -4,7 +4,7 @@
     <ul class="filter-section-wrapper">
         @foreach($categories as $category)
         <li>
-            <a href="/aanbod/{{$category->category}}">{{$category->category}}</a>
+            <a href="/aanbod/filter/{{$category->category}}">{{$category->category}}</a>
         </li>
         @endforeach
     </ul>
