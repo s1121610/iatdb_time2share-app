@@ -15,7 +15,7 @@
         <p class="details__text__tekst">{{$item->deadline}}</p>
     </section>
     <section class="details__btnSection">
-        <button class="u-button u-button--primary details__btnSection__button">Reserveren</button>
+        <a href="/reserveren" class="u-button u-button--primary details__btnSection__button" >Reserveren</a>
     </section>
     <section class="details__reviews">
         <h2 class="details__reviews__title">Laat een review achter</h2>

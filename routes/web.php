@@ -20,6 +20,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/sushi', [\App\Http\Controllers\SushiController::class, 'index']);
     Route::get('/aanbod/create', [App\Http\Controllers\AanbodController::class, 'create']);
     Route::post('/aanbod/{id}/create', [\App\Http\Controllers\DetailsController::class, 'post']);
+    Route::get('/reserveren', [\App\Http\Controllers\UserController::class, 'order']);
 });
  
 Route::get('/aanbod/{id}', [\App\Http\Controllers\DetailsController::class, 'show']);
