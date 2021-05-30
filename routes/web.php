@@ -21,6 +21,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/aanbod/create', [App\Http\Controllers\AanbodController::class, 'create']);
     Route::post('/aanbod/{id}/create', [\App\Http\Controllers\DetailsController::class, 'post']);
     Route::get('/reserveren', [\App\Http\Controllers\UserController::class, 'order']);
+    Route::get('/account', [\App\Http\Controllers\UserController::class, 'personalPage']);
 });
  
 Route::get('/aanbod/{id}', [\App\Http\Controllers\DetailsController::class, 'show']);
