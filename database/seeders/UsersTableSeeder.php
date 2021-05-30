@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
             'name' => "Max",
             'email' => "test@test.nl",
             'password' => bcrypt('Dymo'),
+            'role' => "admin",
         ]);
 
         DB::table('users')->insert([
@@ -26,6 +27,7 @@ class UsersTableSeeder extends Seeder
             'name' => "Kim",
             'email' => "buskim05@gmail.com",
             'password' => bcrypt('Bloem'),
+            'role' => "user",
         ]);
     }
 }

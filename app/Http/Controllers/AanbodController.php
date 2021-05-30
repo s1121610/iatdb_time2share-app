@@ -69,7 +69,7 @@ class AanbodController extends Controller
         // // $items->image3 =  $request->image3->store('img', 'public/img');
         
         $items->description = $request->input('description');
-        $items->image = $request->file('image')->store('img'); //$request->input('image');
+        $items->image = $request->file('image')->move('./img', $items->name);//$request->file('image')->store('img'); //$request->input('image');
         $items->owner = Auth::user()->username;
         $items->deadline = $request->input('deadline');
 

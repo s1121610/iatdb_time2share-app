@@ -38,7 +38,7 @@
             </section>
             <section class="create-form__section">
                 <label for="image">Afbeelding</label>
-                <input type="file" name="image" id="image" />
+                <input type="file" name="image" id="image" required />
             </section>
             <!-- <section class="create-form__section">
                 <label for="image2">Afbeelding 2</label>
