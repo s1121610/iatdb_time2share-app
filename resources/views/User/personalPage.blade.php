@@ -4,11 +4,11 @@
 <h1>Hallo {{$activeUser}}!</h1>
 
 <h2>Reserveringen</h2>
-<ul class="u-grid-12 u-grid-gap-2">
+<!-- <ul class="u-grid-12 u-grid-gap-2">
     @foreach($borrowedItems as $borrowedItems)
         @include('User.components.itemsCard--reservations')
     @endforeach
-</ul>
+</ul> -->
 <h2>Geleende producten</h2>
 <ul class="u-grid-12 u-grid-gap-2">
     @foreach($reservedItems as $reservedItems)

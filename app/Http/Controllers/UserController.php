@@ -18,7 +18,7 @@ class UserController extends Controller
         $reservedItem->borrower = Auth::user()->username;
         try{
             $reservedItem->save();
-            return redirect('/aanbod');
+            return redirect('/account');
             //MESSAGE
         }catch(Exception $e){
             return redirect('/aanbod');
@@ -41,14 +41,13 @@ class UserController extends Controller
         //     return redirect('/aanbod');
         //     //ERROR MESSAGE
         // }
-        
     }
 
     public function personalPage(){
         return view('User.personalPage', [
             'activeUser' => Auth::user()->username,
-            'reservedItems' => \App\Models\reservedItems::where('owner', '=', Auth::user()->username),
-            'borrowedItems' => \App\Models\reservedItems::where('borrower', '=', Auth::user()->username),
+            'reservedItems' => \App\Models\reservedItems::where('owner', '=', Auth::user()->username)->get(),
+            'borrowedItems' => \App\Models\reservedItems::where('borrower', '=', Auth::user()->username)->get(),
         ]);
     }
 }
