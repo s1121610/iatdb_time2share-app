@@ -21,6 +21,7 @@ class AanbodController extends Controller
 
     public function showCat($category){
         return view('Lenen.aanbod', [
+            'userRole' => Auth::user()->role,
             'item' => \App\Models\items::where('category', '=', $category)->get(),
             'reviews' => \App\Models\Review::all(),
             'categories' => \App\Models\categories::all(),
@@ -29,6 +30,7 @@ class AanbodController extends Controller
 
     public function show(){
         return view('Lenen.aanbod', [
+            'userRole' => Auth::user()->role,
             'item' => \App\Models\items::all(),
             'reviews' => \App\Models\Review::all(),
         ]);

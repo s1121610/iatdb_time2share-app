@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class UserController extends Controller
 {
-    public function order(\App\Models\User $user, \App\Models\reservedItems $reservedItem, \App\Models\items $item){
-        $id = 1;
+    public function order($id, \App\Models\User $user, \App\Models\reservedItems $reservedItem, \App\Models\items $item){
+        $id = $item::find($id)->id;
+        print($id);
         $reservedItem->name = $item::where('id', '=', $id)->first()->name;
         $reservedItem->category = $item::where('id', '=', $id)->first()->category;
         $reservedItem->description = $item::where('id', '=', $id)->first()->description;
@@ -19,29 +21,36 @@ class UserController extends Controller
         $reservedItem->borrower = Auth::user()->username;
         try{
             $reservedItem->save();
+            //VERWIJDER UIT AANBOD TABEL:
+            DB::table('items')->where('id', '=', $id)->delete();
             return redirect('/account');
             //MESSAGE
         }catch(Exception $e){
             return redirect('/aanbod');
             //ERROR MESSAGE
-        }
-        //UITGELEENDE SPULLEN TABEL:
-        // $borrowedItem->name = $item::where('id', '=', 1)->first()->name;
-        // $borrowedItem->category = $item::where('id', '=', 1)->first()->category;
-        // $borrowedItem->description = $item::where('id', '=', 1)->first()->description;
-        // $borrowedItem->location = $item::where('id', '=', 1)->first()->location;
-        // $borrowedItem->image = $item::where('id', '=', 1)->first()->image;
-        // $borrowedItem->owner = $item::where('id', '=', 1)->first()->owner;
-        // $borrowedItem->deadline = $item::where('id', '=', 1)->first()->deadline;
-        // $borrowedItem->borrower = Auth::user()->username;
-        // try{
-        //     $borrowedItem->save();
-        //     return redirect('/aanbod');
-        //     //MESSAGE
-        // }catch(Exception $e){
-        //     return redirect('/aanbod');
-        //     //ERROR MESSAGE
-        // }
+        }       
+    }
+
+    public function acceptedItem($id, \App\Models\User $user, \App\Models\reservedItems $reservedItem, \App\Models\items $item){
+        $id = \App\Models\reservedItems::find($id)->id;
+        print($id);
+        $item->name = $reservedItem::where('id', '=', $id)->first()->name;
+        $item->category = $reservedItem::where('id', '=', $id)->first()->category;
+        $item->description = $reservedItem::where('id', '=', $id)->first()->description;
+        $item->location = $reservedItem::where('id', '=', $id)->first()->location;
+        $item->image = $reservedItem::where('id', '=', $id)->first()->image;
+        $item->owner = $reservedItem::where('id', '=', $id)->first()->owner;
+        $item->deadline = $reservedItem::where('id', '=', $id)->first()->deadline;
+        try{
+            $item->save();
+            //VERWIJDER UIT AANBOD TABEL:
+            DB::table('reservedItems')->where('id', '=', $id)->delete();
+            return redirect('/account');
+            //MESSAGE
+        }catch(Exception $e){
+            return redirect('/aanbod');
+            //ERROR MESSAGE
+        }       
     }
 
     public function personalPage(){
@@ -53,5 +62,10 @@ class UserController extends Controller
             'reservedItems' => \App\Models\reservedItems::where('owner', '=', Auth::user()->username)->get(),
             'borrowedItems' => \App\Models\reservedItems::where('borrower', '=', Auth::user()->username)->get(),
         ]);
+    }
+
+    function deleteItem($id){
+        DB::table('items')->where('id', '=', $id)->delete();
+        return redirect('/account');
     }
 }

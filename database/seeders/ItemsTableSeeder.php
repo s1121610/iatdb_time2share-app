@@ -34,40 +34,13 @@ class ItemsTableSeeder extends Seeder
             'deadline' => "2021-05-09"
         ]);
         DB::table('items')->insert([
-            'name' => "Toyota Yaris (groen) uit 2001. Handgeschakeld",
-            'category' => "Autos",
-            'description' => "Een Toyota Yaris uit 2001. Verzekerd. 5-deurs en handgeschakeld. Rijdt perfect!",
-            'location' => "Den Haag",
-            'image' => "./img/autos/yaris.jpg",
+            'name' => "Professionele camera te leen",
+            'category' => "Elektronica",
+            'description' => "Camera van Sony te leen. Voor professioneel gebruik. Werkt 100% en wordt geleverd met allerlei accesoires.",
+            'location' => "Utrecht",
+            'image' => "./img/sonyCamera.jpg",
             'owner' => "MAXimaal",
-            'deadline' => "2021-05-09"
-        ]);
-        DB::table('items')->insert([
-            'name' => "Toyota Yaris (groen) uit 2001. Handgeschakeld",
-            'category' => "Autos",
-            'description' => "Een Toyota Yaris uit 2001. Verzekerd. 5-deurs en handgeschakeld. Rijdt perfect!",
-            'location' => "Den Haag",
-            'image' => "./img/autos/yaris.jpg",
-            'owner' => "MAXimaal",
-            'deadline' => "2021-05-09"
-        ]);
-        DB::table('items')->insert([
-            'name' => "Toyota Yaris (groen) uit 2001. Handgeschakeld",
-            'category' => "Autos",
-            'description' => "Een Toyota Yaris uit 2001. Verzekerd. 5-deurs en handgeschakeld. Rijdt perfect!",
-            'location' => "Den Haag",
-            'image' => "./img/autos/yaris.jpg",
-            'owner' => "MAXimaal",
-            'deadline' => "2021-05-09"
-        ]);
-        DB::table('items')->insert([
-            'name' => "Toyota Yaris (groen) uit 2001. Handgeschakeld",
-            'category' => "Autos",
-            'description' => "Een Toyota Yaris uit 2001. Verzekerd. 5-deurs en handgeschakeld. Rijdt perfect!",
-            'location' => "Den Haag",
-            'image' => "./img/autos/yaris.jpg",
-            'owner' => "MAXimaal",
-            'deadline' => "2021-04-29"
+            'deadline' => "2021-06-20"
         ]);
     }
 }

@@ -15,13 +15,13 @@ class reservedItemsTableSeeder extends Seeder
     public function run()
     {
         DB::table('reservedItems')->insert([
-            'name' => "Toyota Yaris (groen) uit 2001. Handgeschakeld",
-            'category' => "Autos",
-            'description' => "Een Toyota Yaris uit 2001. Verzekerd. 5-deurs en handgeschakeld. Rijdt perfect!",
-            'location' => "Den Haag",
-            'image' => "./img/autos/yaris.jpg",
+            'name' => "Rijke tata kleding",
+            'category' => "Kleding",
+            'description' => "Wil je eruit zien als een rijke tata? Leen dan mijn kleding",
+            'location' => "Amsterdam",
+            'image' => "./img/rijkeTataKleding.jpg",
             'owner' => "MAXimaal",
-            'deadline' => "2021-05-09",
+            'deadline' => "2022-06-01",
             'borrower' => "Kimose"
         ]);
     }

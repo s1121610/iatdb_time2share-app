@@ -20,6 +20,7 @@ class UsersTableSeeder extends Seeder
             'email' => "test@test.nl",
             'password' => bcrypt('Dymo'),
             'role' => "admin",
+            'banned' => false,
         ]);
 
         DB::table('users')->insert([
@@ -28,6 +29,7 @@ class UsersTableSeeder extends Seeder
             'email' => "buskim05@gmail.com",
             'password' => bcrypt('Bloem'),
             'role' => "user",
+            'banned' => true,
         ]);
     }
 }

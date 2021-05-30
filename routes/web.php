@@ -13,17 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::middleware(['auth', 'admin'])->group(function(){
-    Route::get('/sushi/create', [App\Http\Controllers\SushiController::class, 'create']);
+    Route::get('/item/delete', [App\Http\Controllers\AdminController::class, 'deleteItemPage']);
 });
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/sushi', [\App\Http\Controllers\SushiController::class, 'index']);
     Route::get('/aanbod/create', [App\Http\Controllers\AanbodController::class, 'create']);
     Route::post('/aanbod/{id}/create', [\App\Http\Controllers\DetailsController::class, 'post']);
-    Route::get('/reserveren', [\App\Http\Controllers\UserController::class, 'order']);
+    Route::get('/reserveren/{id}', [\App\Http\Controllers\UserController::class, 'order']);
     
     Route::get('/account', [\App\Http\Controllers\UserController::class, 'personalPage']);
     Route::post('/account', [\App\Http\Controllers\UserController::class, 'personalPage']);
+
+    Route::get('/item/accepted/{id}', [\App\Http\Controllers\UserController::class, 'acceptedItem']);
+    Route::get('/item/delete/{id}', [\App\Http\Controllers\UserController::class, 'deleteItem']);   
 });
  
 Route::get('/aanbod/{id}', [\App\Http\Controllers\DetailsController::class, 'show']);

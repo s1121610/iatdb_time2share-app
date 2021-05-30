@@ -15,6 +15,10 @@
             </a>
         </x-slot>
 
+        @if (session('message'))
+            <div class="alert alert-danger">{{ session('message') }}</div>
+        @endif
+
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 

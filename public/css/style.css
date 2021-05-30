@@ -662,6 +662,10 @@ p{
     border: none;
     border-radius: 1rem;
     font-weight: 400;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 
 .u-button--primary{
@@ -679,9 +683,6 @@ p{
 
 .u-button:hover{
     cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-    transform: perspective(.2rem) translateZ(0);
 }
 
 

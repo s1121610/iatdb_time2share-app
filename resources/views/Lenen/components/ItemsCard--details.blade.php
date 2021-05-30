@@ -12,9 +12,11 @@
         <p class="details__text__tekst">{{$item->description }}</p>
         <h2 class="details__text__title">Deadline</h2>
         <p class="details__text__tekst">{{$item->deadline}}</p>
+        <h2 class="details__text__title">Eigenaar</h2>
+        <p class="details__text__tekst">{{$item->owner}}</p>
     </section>
     <section class="details__btnSection">
-        <a href="/reserveren" class="u-button u-button--primary details__btnSection__button" >Reserveren</a>
+        <a href="/reserveren/{{$item->id}}" class="u-button u-button--primary details__btnSection__button" >Reserveren</a>
     </section>
     <section class="details__reviews">
         <h2 class="details__reviews__title">Laat een review achter</h2>
@@ -59,8 +61,6 @@
                     @endif
                 @endforeach
             </ul>
-    
         </section>
     </section>
-
 </article>

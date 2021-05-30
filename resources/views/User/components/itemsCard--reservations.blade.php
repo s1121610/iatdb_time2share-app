@@ -12,6 +12,8 @@
         <section class="GridCard__borrowerSection u-flex-v-center">
             <p class="GridCard__text">Aanvrager: {{$reservedItems->borrower}}</p>
         </section>
+        <section>
+            <a class="u-button u-button--primary" href="/item/accepted/{{$reservedItems->id}}">Weer ontvangen</a>
+        </section>
     </article>
-    
 </li>
