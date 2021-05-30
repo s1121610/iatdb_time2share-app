@@ -9,6 +9,9 @@
         <section class="GridCard__textSection u-flex-v-center">
             <p class="GridCard__text">{{$reservedItems->description}}</p>
         </section>
+        <section class="GridCard__borrowerSection u-flex-v-center">
+            <p class="GridCard__text">Aanvrager: {{$reservedItems->borrower}}</p>
+        </section>
     </article>
     
 </li>

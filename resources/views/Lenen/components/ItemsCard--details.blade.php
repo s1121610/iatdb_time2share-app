@@ -4,7 +4,6 @@
         <h1 class="details__header__title">{{$item->name}}</h1>
         <h3 class="details__header__subtitle">{{$item->category}}</h3>
     </header>
-    
     <figure class="details__figure">
         <img class="details__image" src=../{{$item->image}} alt={{$item->name}}>
     </figure> 

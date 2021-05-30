@@ -45,7 +45,7 @@ class UserController extends Controller
 
     public function personalPage(){
         return view('User.personalPage', [
-            'activeUser' => Auth::user()->username,
+            'activeUser' => Auth::user()->name,
             'reservedItems' => \App\Models\reservedItems::where('owner', '=', Auth::user()->username)->get(),
             'borrowedItems' => \App\Models\reservedItems::where('borrower', '=', Auth::user()->username)->get(),
         ]);
