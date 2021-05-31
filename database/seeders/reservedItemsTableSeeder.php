@@ -22,7 +22,8 @@ class reservedItemsTableSeeder extends Seeder
             'image' => "./img/rijkeTataKleding.jpg",
             'owner' => "MAXimaal",
             'deadline' => "2022-06-01",
-            'borrower' => "Kimose"
+            'borrower' => "Kimose",
+            'atBorrower' => true
         ]);
     }
 }

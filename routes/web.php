@@ -39,9 +39,10 @@ Route::group(['prefix'=>'auth',  'middleware' => 'banned'], function(){
     Route::post('/account', [\App\Http\Controllers\UserController::class, 'personalPage']);
 
     Route::get('/item/accepted/{id}', [\App\Http\Controllers\UserController::class, 'acceptedItem']);
-    Route::get('/item/delete/{id}', [\App\Http\Controllers\UserController::class, 'deleteItem']);   
-}
-
+    Route::get('/item/delete/{id}', [\App\Http\Controllers\UserController::class, 'deleteItem']);
+    
+    Route::get('/item/return/{id}', [\App\Http\Controllers\UserController::class, 'returnedItem']);
+});
  
 Route::get('/aanbod/{id}', [\App\Http\Controllers\DetailsController::class, 'show']);
 Route::get('/aanbod/filter/{category}', [\App\Http\Controllers\AanbodController::class, 'showCat']);

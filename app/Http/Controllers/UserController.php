@@ -19,6 +19,7 @@ class UserController extends Controller
         $reservedItem->owner = $item::where('id', '=', $id)->first()->owner;
         $reservedItem->deadline = $item::where('id', '=', $id)->first()->deadline;
         $reservedItem->borrower = Auth::user()->username;
+        $reservedItem->atBorrower = true;
         try{
             $reservedItem->save();
             //VERWIJDER UIT AANBOD TABEL:
@@ -51,6 +52,11 @@ class UserController extends Controller
             return redirect('/aanbod');
             //ERROR MESSAGE
         }       
+    }
+
+    public function returnedItem($id){
+        $id = \App\Models\reservedItems::find($id)->id;
+        DB::update('update reservedItems set atBorrower = false where id = ?', [$id]);
     }
 
     public function personalPage(){
