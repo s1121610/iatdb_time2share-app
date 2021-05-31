@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class CheckBanned
 {
@@ -16,13 +18,16 @@ class CheckBanned
      */
     public function handle(Request $request, Closure $next)
     {
-        // if(auth()->user() !== null){
-            if (auth()->user()->banned === true) {
+        if(Auth::user() !== null){
+            if (Auth::user()->banned === true) {
                 auth()->logout();
                 $message = 'Uw account is geblokkeerd. Neem contact op met de gebruiker.';
                 return redirect()->route('login')->withMessage($message);
             }
-        //}       
-        return $next($request);
+            else{
+                return $next($request);
+            }
+            return $next($request);
+        }       
     }
 }
