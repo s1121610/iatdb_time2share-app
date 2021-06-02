@@ -64,7 +64,7 @@ class UserController extends Controller
         return view('User.personalPage', [
             'users' => \App\Models\User::all(),
             'userList' => \App\Models\User::where('role', '!=', 'admin')->where('banned', '=', false)->get(),
-            'blockedUsersList' => \App\Models\User::where('banned', '=', true)->where('role', '=', 'user')->get(),
+            'blockedUsersList' => \App\Models\User::where('banned', '=', true)->where('role', '!=', 'admin')->get(),
             'activeUser' => Auth::user()->name,
             'userRole' => Auth::user()->role,
             'myItems' => \App\Models\items::where('owner', '=', Auth::user()->username)->get(),
