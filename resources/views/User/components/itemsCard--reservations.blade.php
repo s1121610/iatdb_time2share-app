@@ -13,6 +13,9 @@
             <p class="GridCard__text">Aanvrager: {{$reservedItems->borrower}}</p>
         </section>
         <section>
+            <p class="GridCard__text">Deadline: {{$reservedItems->deadline}}</p>
+        </section>
+        <section>
             <a class="u-button u-button--primary" href="/item/accepted/{{$reservedItems->id}}">Weer ontvangen</a>
         </section>
     </article>

@@ -28,6 +28,9 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/item/accepted/{id}', [\App\Http\Controllers\UserController::class, 'acceptedItem']);
     Route::get('/item/delete/{id}', [\App\Http\Controllers\UserController::class, 'deleteItem']);  
     Route::get('/item/return/{id}', [\App\Http\Controllers\UserController::class, 'returnedItem']); 
+
+    Route::post('/account/block', [\App\Http\Controllers\AdminController::class, 'blockUser']);
+    Route::post('/account/deblock', [\App\Http\Controllers\AdminController::class, 'deblockUser']);
 });
 
 // Route::group(['prefix'=>'auth',  'middleware' => 'banned'], function(){
@@ -52,6 +55,7 @@ Route::get('/', [\App\Http\Controllers\AanbodController::class, 'home']);
 Route::get('/aanbod', [App\Http\Controllers\AanbodController::class, 'show']);
 Route::post('/aanbod', [App\Http\Controllers\AanbodController::class, 'store']);
 
+Route::get('/profile/{username}', [App\Http\Controllers\UserController::class, 'showProfile']);
 
 Route::middleware(['auth', 'age'])->group(function(){
     Route::get('/drinks', [App\Http\Controllers\DrinksController::class, 'index']);

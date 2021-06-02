@@ -63,6 +63,8 @@ class UserController extends Controller
     public function personalPage(){
         return view('User.personalPage', [
             'users' => \App\Models\User::all(),
+            'userList' => \App\Models\User::where('role', '!=', 'admin')->where('banned', '=', false)->get(),
+            'blockedUsersList' => \App\Models\User::where('banned', '=', true)->where('role', '=', 'user')->get(),
             'activeUser' => Auth::user()->name,
             'userRole' => Auth::user()->role,
             'myItems' => \App\Models\items::where('owner', '=', Auth::user()->username)->get(),
@@ -75,5 +77,12 @@ class UserController extends Controller
     function deleteItem($id){
         DB::table('items')->where('id', '=', $id)->delete();
         return redirect('/account');
+    }
+    
+    function showProfile($username){
+        return view('User.profile', [
+            'user' => \App\Models\User::where('username', '=', $username)->first(),
+            'item' => \App\Models\items::where('owner', '=', $username)->get(),
+        ]);
     }
 }

@@ -590,6 +590,9 @@ p{
 }
 
 /* ########################## UTILITY CLASSES ########################## */
+.u-bold{
+    font-weight: bold;
+}
 
 .u-list-style-none{
     list-style: none;

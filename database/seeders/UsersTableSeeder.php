@@ -21,6 +21,7 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('Dymo'),
             'role' => "admin",
             'banned' => false,
+            'woonplaats' => "Den Haag"
         ]);
 
         DB::table('users')->insert([
@@ -30,6 +31,7 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('Bloem'),
             'role' => "user",
             'banned' => true,
+            'woonplaats' => "Rijswijk"
         ]);
     }
 }

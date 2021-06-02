@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time2Share</title>
-    <script src="/js/main.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="{{ url('./css/style.css') }}">
-</head>
-<body>
-    <!-- @section('title')
-        Creeër Sushi
-    @endsection -->
-
+@extends('Lenen.default')
+@section('content')
+@include('Lenen.navbar')
     <article class="create-form">
         <form class="create-form__form" action="/aanbod" method="POST" enctype="multipart/form-data">
             @csrf
@@ -58,12 +46,10 @@
             </section>
             <section class="create-form__section">
                 <label for="deadline">Deadline</label>
-                <input class="create-form__input" type="date" name="deadline" id="deadline" value="2021-04-10" min="2021-04-10" max="2022-04-10" required>
+                <input class="create-form__input" type="date" name="deadline" id="deadline" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 year')); ?>" required>
             </section>
             <section class="create-form__section">
                 <button class="sushiCard__button" type="submit">Uitlenen</button>
             </section>
         </form>
     </article>   
-</body>
-</html>
