@@ -57,6 +57,7 @@ class UserController extends Controller
     public function returnedItem($id){
         $id = \App\Models\reservedItems::find($id)->id;
         DB::update('update reservedItems set atBorrower = false where id = ?', [$id]);
+        return redirect('/account');
     }
 
     public function personalPage(){
@@ -66,7 +67,8 @@ class UserController extends Controller
             'userRole' => Auth::user()->role,
             'myItems' => \App\Models\items::where('owner', '=', Auth::user()->username)->get(),
             'reservedItems' => \App\Models\reservedItems::where('owner', '=', Auth::user()->username)->get(),
-            'borrowedItems' => \App\Models\reservedItems::where('borrower', '=', Auth::user()->username)->get(),
+            'borrowedItems' => \App\Models\reservedItems::where('borrower', '=', Auth::user()->username)->where('atBorrower', '=', true)->get(),
+            'atBorrower' => DB::table('reservedItems')->select('atBorrower')->get(),
         ]);
     }
 
