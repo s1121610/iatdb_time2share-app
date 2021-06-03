@@ -16,7 +16,7 @@ class CheckIfAdult
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->age >= 18){
+        if(Auth::user()->name == "klaas"){
             return $next($request);
         }
         else{

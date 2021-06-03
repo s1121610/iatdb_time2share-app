@@ -16,8 +16,7 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('/item/delete', [App\Http\Controllers\AdminController::class, 'deleteItemPage']);
 });
 
-Route::middleware(['auth'])->group(function(){
-    Route::get('/sushi', [\App\Http\Controllers\SushiController::class, 'index']);
+Route::middleware(['auth', 'banned'])->group(function(){
     Route::get('/aanbod/create', [App\Http\Controllers\AanbodController::class, 'create']);
     Route::post('/aanbod/{id}/create', [\App\Http\Controllers\DetailsController::class, 'post']);
     Route::get('/reserveren/{id}', [\App\Http\Controllers\UserController::class, 'order']);
@@ -33,20 +32,9 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/account/deblock', [\App\Http\Controllers\AdminController::class, 'deblockUser']);
 });
 
-// Route::group(['prefix'=>'auth',  'middleware' => 'banned'], function(){
-//     Route::get('/sushi', [\App\Http\Controllers\SushiController::class, 'index']);
-//     Route::get('/aanbod/create', [App\Http\Controllers\AanbodController::class, 'create']);
-//     Route::post('/aanbod/{id}/create', [\App\Http\Controllers\DetailsController::class, 'post']);
-//     Route::get('/reserveren/{id}', [\App\Http\Controllers\UserController::class, 'order']);
-    
-//     Route::get('/account', [\App\Http\Controllers\UserController::class, 'personalPage']);
-//     Route::post('/account', [\App\Http\Controllers\UserController::class, 'personalPage']);
-
-//     Route::get('/item/accepted/{id}', [\App\Http\Controllers\UserController::class, 'acceptedItem']);
-//     Route::get('/item/delete/{id}', [\App\Http\Controllers\UserController::class, 'deleteItem']);
-    
-//     Route::get('/item/return/{id}', [\App\Http\Controllers\UserController::class, 'returnedItem']);
-// });
+Route::middleware(['auth'])->group(function(){
+    Route::get('/account/block/message', [\App\Http\Controllers\AdminController::class, 'blockedUser']);
+});
  
 Route::get('/aanbod/{id}', [\App\Http\Controllers\DetailsController::class, 'show']);
 Route::get('/aanbod/filter/{category}', [\App\Http\Controllers\AanbodController::class, 'showCat']);
@@ -56,10 +44,6 @@ Route::get('/aanbod', [App\Http\Controllers\AanbodController::class, 'show']);
 Route::post('/aanbod', [App\Http\Controllers\AanbodController::class, 'store']);
 
 Route::get('/profile/{username}', [App\Http\Controllers\UserController::class, 'showProfile']);
-
-Route::middleware(['auth', 'age'])->group(function(){
-    Route::get('/drinks', [App\Http\Controllers\DrinksController::class, 'index']);
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

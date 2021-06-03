@@ -25,4 +25,10 @@ class AdminController extends Controller
         DB::update('update users set banned = false where username = ?', [$userToDeblock]);
         return redirect('/account');
     }
+
+    function blockedUser(){
+        return view('User.blocked.blocked--message', [
+            'users' => \App\Models\User::all(),
+        ]);
+    }
 }
