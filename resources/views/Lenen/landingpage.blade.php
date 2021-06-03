@@ -25,12 +25,9 @@
         <ul class="nav__list">
             <li class="nav__list__item"><a class="nav__list__item--link" href="/">Home</a></li>
             <li class="nav__list__item"><a class="nav__list__item--link" href="/aanbod">Aanbod</a></li>
-            <li class="nav__list__item"><a class="nav__list__item--link" href="#">Hoe werkt het?</a></li>
             <li class="nav__list__item"><button class="u-button u-button--secondary" onclick="window.location.href='/login'">Login</button></li>
             <li class="nav__list__item"><button class="u-button u-button--primary" onclick="window.location.href='/register'">Aanmelden</button></li>
         </ul>
     </nav>
 </header>
 @include('Lenen.components.checkbox--index')
-
-

@@ -9,8 +9,9 @@
         <section class="GridCard__textSection u-flex-v-center">
             <p class="GridCard__text">{{$item->description}}</p>
         </section>
-        <section>
-            <a class="u-button u-button--primary" href="/item/delete/{{$item->id}}">Verwijder</a>
+        <section class="GridCard__buttonSection">
+            <a class="u-button u-button--secondary" href="/item/delete/{{$item->id}}">Verwijder</a>
+            <a class="u-button u-button--primary" href="/aanbod/{{$item->id}}">Bekijk</a>
         </section>
     </article>
 </li>

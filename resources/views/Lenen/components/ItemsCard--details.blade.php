@@ -13,7 +13,8 @@
         <h2 class="details__text__title">Deadline</h2>
         <p class="details__text__tekst">{{$item->deadline}}</p>
         <h2 class="details__text__title">Eigenaar</h2>
-        <p class="details__text__tekst">{{$item->owner}}</p>
+        <a class="details__text__tekst" href="/profile/{{$item->owner}}">{{$item->owner}}</a>
+        
     </section>
     <section class="details__btnSection">
         <a href="/reserveren/{{$item->id}}" class="u-button u-button--primary details__btnSection__button" >Reserveren</a>

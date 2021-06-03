@@ -17,20 +17,10 @@ class CheckIfBanned
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->banned === false){
+        if(Auth::user()->banned == false){
             return $next($request);
         }else{
             return redirect('/account/block/message');
         }
-        // if(Auth::user() !== null){
-        //     if(Auth::user()->first()->banned === false){
-        //         return $next($request);
-        //     }else{
-        //         return redirect('/');
-        //     }
-        // }
-        // else{
-        //     return $next($request);
-        // }
     }
 }
