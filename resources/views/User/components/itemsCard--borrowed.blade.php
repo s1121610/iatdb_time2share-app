@@ -7,12 +7,20 @@
             <img class="GridCard__image" src="../../{{$borrowedItems->image}}" alt="{{$borrowedItems->name}}">
         </figure>
         <section class="GridCard__textSection u-flex-v-center">
-            <p class="GridCard__text">{{$borrowedItems->description}}</p>
+            <p class="GridCard__text">{{substr($borrowedItems->description, 0, 100)}}...</p>
+                    </section>
+        <section class="GridCard__deadline">
+            @if($borrowedItems->deadline < $currDate)
+                <p class="GridCard__text u-bold u-alarm">Deadline: {{\Carbon\Carbon::parse($borrowedItems->deadline)->format('d-m-Y')}}</p>
+                <p>Breng dit item z.s.m. terug naar de eigenaar</p>
+            @elseif($borrowedItems->deadline == $currDate)
+                <p class="GridCard__text u-bold">Deadline: {{\Carbon\Carbon::parse($borrowedItems->deadline)->format('d-m-Y')}}</p>
+                <p>Breng dit item vandaag terug naar de eigenaar</p>
+            @else
+                <p class="GridCard__text u-bold">Deadline: {{\Carbon\Carbon::parse($borrowedItems->deadline)->format('d-m-Y')}}<p>
+            @endif
         </section>
-        <section class="GridCard__textSection u-flex-v-center">
-            <p class="GridCard__text u-bold">Deadline: {{$reservedItems->deadline}}</p>
-        </section>
-        <section>
+        <section class="GridCard__buttonSection u-flex-v-center">
             <a class="u-button u-button--primary" href="/item/return/{{$borrowedItems->id}}">Teruggebracht</a>
         </section>
     </article>

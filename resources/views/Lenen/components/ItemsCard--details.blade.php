@@ -11,7 +11,7 @@
         <h2 class="details__text__title">Omschrijving</h2>
         <p class="details__text__tekst">{{$item->description }}</p>
         <h2 class="details__text__title">Deadline</h2>
-        <p class="details__text__tekst">{{$item->deadline}}</p>
+        <p class="details__text__tekst">{{\Carbon\Carbon::parse($item->deadline)->format('d-m-Y')}}</p>
         <h2 class="details__text__title">Eigenaar</h2>
         <a class="details__text__tekst" href="/profile/{{$item->owner}}">{{$item->owner}}</a>
         

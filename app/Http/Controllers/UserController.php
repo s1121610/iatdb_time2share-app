@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
     public function order($id, \App\Models\User $user, \App\Models\reservedItems $reservedItem, \App\Models\items $item){
         $id = $item::find($id)->id;
-        print($id);
         $reservedItem->name = $item::where('id', '=', $id)->first()->name;
         $reservedItem->category = $item::where('id', '=', $id)->first()->category;
         $reservedItem->description = $item::where('id', '=', $id)->first()->description;
@@ -71,6 +71,7 @@ class UserController extends Controller
             'reservedItems' => \App\Models\reservedItems::where('owner', '=', Auth::user()->username)->get(),
             'borrowedItems' => \App\Models\reservedItems::where('borrower', '=', Auth::user()->username)->where('atBorrower', '=', true)->get(),
             'atBorrower' => DB::table('reservedItems')->select('atBorrower')->get(),
+            'currDate' => Carbon::now()->format('Y-m-d'),
         ]);
     }
 

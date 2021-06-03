@@ -49,6 +49,7 @@ class AanbodController extends Controller
         $items->description = $request->input('description');
         $items->image = $request->file('image')->move('./img', $items->name);
         $items->owner = Auth::user()->username;
+        $items->location = Auth::user()->woonplaats;
         $items->deadline = $request->input('deadline');
         try{
             $items->save();

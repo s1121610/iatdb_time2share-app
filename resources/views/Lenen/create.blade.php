@@ -29,7 +29,7 @@
                 <input class="create-form__input" type="date" name="deadline" id="deadline" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 year')); ?>" required>
             </section>
             <section class="create-form__section">
-                <button class="sushiCard__button" type="submit">Uitlenen</button>
+                <button class="u-button u-button--primary" type="submit">Uitlenen</button>
             </section>
         </form>
     </article>   

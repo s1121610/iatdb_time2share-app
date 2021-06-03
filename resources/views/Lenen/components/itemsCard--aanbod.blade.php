@@ -8,7 +8,8 @@
                 <img class="GridCard__image" src="../../{{$item->image}}" alt="{{$item->name}}">
             </figure>
             <section class="GridCard__textSection u-flex-v-center">
-                <p class="GridCard__text">{{$item->description}}</p>
+                <p class="GridCard__text">{{substr($item->description, 0, 100)}}...</p>
+                
             </section>
         </article>
     </a>
