@@ -12,15 +12,40 @@
             <button class="u-button u-button--secondary u-margin--nav" onclick="window.location.href='/aanbod'">Bekijk het aanbod</button>
         </section>
     </article>
-    <figure class="landing-header__figure">
-        <img class="landing-header__image landing-header__image--kleren u-image" src="./img/header/Kleren.png" alt="Foto van een aantal kleren">
-    </figure>
-    <figure class="landing-header__figure">
-        <img class="landing-header__image landing-header__image--auto u-image" src="./img/header/Auto.png" alt="Foto van een auto">
-    </figure>
-    <figure class="landing-header__figure">
-        <img class="landing-header__image u-image landing-header__image--camera" src="./img/header/Camera.png" alt="Foto van een camera">
-    </figure>
+    <!--########### RESPONSIVE IMAGES #####################-->
+    <picture class="landing-header__figure">
+        <source class="landing-header__image u-image landing-header__image--kleren" srcset="/img/header/Kleren/Kleren.avif" type="image/avif" />
+        <source class="landing-header__image u-image landing-header__image--kleren" srcset="/img/header/Kleren/Kleren.webp" media="(min-width: 1400px)" type="image/webp" />
+        <source class="landing-header__image u-image landing-header__image--kleren" srcset="/img/header/Kleren/Kleren_320.webp" media="(min-width: 700px)" type="image/webp" />
+        <img class="landing-header__image u-image landing-header__image--kleren" 
+                srcset="/img/header/Kleren/Kleren_320.jpg 320w,
+                    /img/header/Kleren/Kleren.jpg 620w" 
+        sizes="(min-width: 1400px) 620px, 320w"
+        src="/img/header/Kleren/Kleren.png" alt="Foto van een aantal kledingstukken.">
+    </picture>
+
+    <picture class="landing-header__figure">
+        <source class="landing-header__image u-image landing-header__image--auto" srcset="/img/header/Auto/Auto.avif" type="image/avif" />
+        <source class="landing-header__image u-image landing-header__image--auto" srcset="/img/header/Auto/Auto.webp" media="(min-width: 1400px)" type="image/webp" />
+        <source class="landing-header__image u-image landing-header__image--auto" srcset="/img/header/Auto/Auto_480.webp" media="(min-width: 700px)" type="image/webp" />
+        <img class="landing-header__image u-image landing-header__image--auto"
+            srcset="/img/header/Auto/Auto_480.jpg 480w,
+                    /img/header/Auto/Auto.jpg 620w" 
+        sizes="(min-width: 1400px) 620px, 480px"
+        src="/img/header/Auto/Auto.png" alt="Foto van een witte auto">
+    </picture>
+
+    <picture class="landing-header__figure">
+        <source class="landing-header__image u-image landing-header__image--camera" srcset="/img/header/Camera/Camera.avif" type="image/avif" />
+        <source class="landing-header__image u-image landing-header__image--camera" srcset="/img/header/Camera/Camera.webp" media="(min-width: 1400px)" type="image/webp" />
+        <source class="landing-header__image u-image landing-header__image--camera" srcset="/img/header/Camera/Camera_480.webp" media="(min-width: 700px)" type="image/webp" />
+        <img class="landing-header__image u-image landing-header__image--camera"
+            srcset="/img/header/Camera/Camera_480.jpg 480w,
+                    /img/header/Camera/Camera.jpg 620w" 
+        sizes="(min-width: 1400px) 620px, 480px"
+        src="/img/header/Camera/Camera.png" alt="Foto van een cameratoestel.">
+    </picture>
+
     <nav class="landing-header__navigatie nav">
         <ul class="nav__list">
             <li class="nav__list__item"><a class="nav__list__item--link" href="/">Home</a></li>

@@ -33,6 +33,7 @@ class AanbodController extends Controller
             'userRole' => Auth::user(),
             'item' => \App\Models\items::all(),
             'reviews' => \App\Models\Review::all(),
+            'categories' => \App\Models\categories::all(),
         ]);
     }
 
