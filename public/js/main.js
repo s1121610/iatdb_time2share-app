@@ -104,21 +104,32 @@
 // });
 
 //---------------------------------------- ZOEKFUNCTIE --------------------------------
+const searchbarV = document.getElementById("js--searchbar");
+
 function searchbar(){
     const searchbar = document.getElementById("js--searchbar");
     const itemsList = document.getElementsByClassName("GridCard");
+    const message = document.getElementById("js--message");
     searchbar.onkeyup = (event) => {
-        console.log(event.target.value);
         let filter = event.target.value.toUpperCase();
-        for(let i = 0; i < itemsList.length; i++){
-            let innerHTML = itemsList[i].innerHTML.toUpperCase();
-            if(innerHTML.indexOf(filter) !== -1){
-                itemsList[i].style.display = "";
+        message.style.display = "none";
+        if(filter !== "SRC" && filter !== "ALT" && filter !== "CLASS" && filter !== "DATA-"){
+            for(let i = 0; i < itemsList.length; i++){
+                let innerHTML = itemsList[i].innerHTML.toUpperCase();
+                if(innerHTML.indexOf(filter) !== -1){
+                    message.style.display = "none";
+                    itemsList[i].style.display = "";
+                }
+                else{
+                    message.style.display = "none";
+                    itemsList[i].style.display = "none";
+                }
             }
-            else{
+        }else{
+            for(let i = 0; i < itemsList.length; i++){
+                itemsList[i].style.display = "none";
                 itemsList[i].style.display = "none";
             }
         }
-    }
+    };
 }
-searchbar();

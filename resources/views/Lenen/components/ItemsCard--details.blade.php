@@ -5,7 +5,7 @@
         <h3 class="details__header__subtitle">{{$item->category}}</h3>
     </header>
     <figure class="details__figure">
-        <img class="details__image" src=../{{$item->image}} alt={{$item->name}}>
+        <img class="details__image" src="../{{$item->image}}" alt={{$item->name}}>
     </figure> 
     <section class="details__text">
         <h2 class="details__text__title">Omschrijving</h2>
@@ -29,7 +29,7 @@
             </section>
             <section class="create-form__section">
                 <label class="u-white" for="review">Review</label><br>
-                <textarea rows="8" cols="50" class="create-form__textarea" name="review" id="review" type="text" required></textarea>
+                <textarea rows="8" cols="50" class="create-form__textarea" name="review" id="review" required></textarea>
             </section>
             <section class="create-form__section">
                 <label class="u-white" for="score">Cijfer</label>

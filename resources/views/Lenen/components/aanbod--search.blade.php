@@ -1,3 +1,4 @@
 <section class="searchWrapper" id="js--searchbar">
-    <input class="searchWrapper__bar" type="text" class="searchbar" placeholder="zoek...">
+    <input onclick="searchbar()" class="searchbar searchWrapper__bar" type="text" placeholder="zoek...">
 </section>
+<p id="js--message"></p>

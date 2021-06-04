@@ -18,7 +18,7 @@
             </section>
             <section class="create-form__section">
                 <label for="description">Beschrijving *</label><br>
-                <textarea rows="4" cols="50" class="create-form__textarea" name="description" type="text" required></textarea>
+                <textarea rows="4" cols="50" class="create-form__textarea" name="description" id="description" required></textarea>
             </section>
             <section class="create-form__section">
                 <label for="image">Afbeelding *</label>
