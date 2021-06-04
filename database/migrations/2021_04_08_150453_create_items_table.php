@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->string("category");
             $table->foreign("category")->references("category")->on("categories");
             $table->longText("description");
-            $table->string("location");
+            $table->string("location")->nullable();
             $table->string("image");
             $table->string("image2")->nullable();
             $table->string("image3")->nullable();

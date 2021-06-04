@@ -1,4 +1,3 @@
-
 <section class="filter-section">
     <h2 class="filter-section__title">Ik wil lenen...</h2>
     <ul class="filter-section-wrapper">
